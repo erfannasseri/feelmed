@@ -1,0 +1,20 @@
+'use client'
+import React, { useState , useEffect} from 'react'
+import AddPropertyForm from '../../../components/PropertyAddForm'
+import AddPackageForm from '../../../components/AddPackageForm'
+
+const page = () => {
+  
+  return (
+    <section className="bg-blue-50">
+    <div className="container m-auto max-w-2xl py-24">
+      <div
+        className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
+          <AddPackageForm/>
+      </div>
+    </div>
+  </section>
+  )
+}
+
+export default page
