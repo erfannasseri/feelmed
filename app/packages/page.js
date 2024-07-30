@@ -1,5 +1,6 @@
 import React from 'react'
 import PackagesCard from '../../components/PackagesCard'
+import PackagesInfoBoxes from '../../components/PackagesInfoBoxes'
 import { fetchPackages } from '../../utils/requests';
 
 
@@ -13,6 +14,7 @@ const Packages = async ()=> {
 
   return (
     <section className="px-4 py-6 h-full">
+      <PackagesInfoBoxes/>
       <div className="container-xl lg:container m-auto px-4 py-6">
         {!properties ?(
           <p>No packages found</p>

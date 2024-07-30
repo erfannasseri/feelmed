@@ -1,5 +1,6 @@
 import React from 'react'
 import InfoBox from './InfoBox'
+import medical from '../assets/images/Untitled-1.jpg'
 
 const InfoBoxes = () => {
   return (
@@ -9,7 +10,8 @@ const InfoBoxes = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
             <InfoBox 
                 heading="Treatment package"
-                backgroundColor='bg-gray-100'
+                backgroundColor=''
+                backgroundImage='https://umanitoba.ca/explore/sites/explore/files/styles/21x9_1100w/public/2021-06/international-medical-graduate-hero.png?itok=qBSKnNpO'
                 buttonInfo={{
                     text: 'Browse Packages',
                     link: '/packages/medical',
@@ -20,7 +22,8 @@ const InfoBoxes = () => {
             </InfoBox>
             <InfoBox 
                 heading="Beauty treatment package"
-                backgroundColor='bg-blue-100'
+                backgroundColor=''
+                backgroundImage='https://ruhee.ae/uploads/cachewebp/news/2807Facial%20banner-1600x700.webp'
                 buttonInfo={{
                     text: 'Browse Packages',
                     link: '/packages/cosmetic',

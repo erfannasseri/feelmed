@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../assets/images/logo-white.png';
+import logo from '../assets/images/logomed.png';
 import profileDefault from '../assets/images/profile.png';
 import { FaCube, FaGoogle, FaHome, FaPlus } from 'react-icons/fa';
 import { signIn, signOut, useSession, getProviders } from 'next-auth/react';
@@ -26,8 +26,10 @@ const Navbar = () => {
 
     setAuthProviders();
   }, []);
-  
 
+  const onClickClose = ()=>{
+    setIsMobileMenuOpen (false)
+  }
 
   return (
     <nav className='bg-blue-700 border-b border-blue-500'>
@@ -65,10 +67,10 @@ const Navbar = () => {
           <div className='flex flex-1 items-center justify-center md:items-stretch md:justify-start'>
             {/* <!-- Logo --> */}
             <Link className='flex flex-shrink-0 items-center' href='/'>
-              <Image className='h-10 w-auto' src={logo} alt='FeelMed' />
+              <Image className='h-[60px] w-auto md:hidden' src={logo} alt='FeelMed' />
 
               <span className='hidden md:block text-white text-2xl font-bold ml-2'>
-                FeelMedTour
+                MyMedTrip
               </span>
             </Link>
             {/* <!-- Desktop Menu Hidden below md screens --> */}
@@ -195,18 +197,6 @@ const Navbar = () => {
                     >
                       Your Profile
                     </Link>
-                    <Link
-                      href='/properties/saved'
-                      className='block px-4 py-2 text-sm text-gray-700'
-                      role='menuitem'
-                      tabIndex='-1'
-                      id='user-menu-item-2'
-                      onClick={() => {
-                        setIsProfileMenuOpen(false);
-                      }}
-                    >
-                      Saved Properties
-                    </Link>
                     <button
                       onClick={() => {
                         setIsProfileMenuOpen(false);
@@ -232,6 +222,7 @@ const Navbar = () => {
         <div id='mobile-menu'>
           <div className='space-y-1 px-2 pb-3 pt-2'>
             <Link
+              onClick={onClickClose}
               href='/'
               className={`${
                 pathname === '/' ? 'bg-black' : ''
@@ -240,6 +231,7 @@ const Navbar = () => {
               <FaHome className='inline mb-1 mr-1'/> Home
             </Link>
             <Link
+              onClick={onClickClose}
               href='/packages'
               className={`${
                 pathname === '/packages' ? 'bg-black' : ''
@@ -249,6 +241,7 @@ const Navbar = () => {
             </Link>
             {session && (
               <Link
+                onClick={onClickClose}
                 href='/packages/add'
                 className={`${
                   pathname === '/packages/add' ? 'bg-black' : ''

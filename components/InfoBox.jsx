@@ -6,10 +6,20 @@ function InfoBox({
     backgroundColor="bg-gray-100",
     textColor = 'text-gray-800',
     buttonInfo,
-    children
+    children,
+    backgroundImage
 }) {
+
+  console.log(backgroundColor);
   return (
-    <div className={`${backgroundColor} p-6 rounded-lg shadow-md`}>
+    <div className={`${backgroundColor} p-6 rounded-lg shadow-md`}
+          style={{
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+            overflow:'hidden'
+          }}
+          >
         <h2 className={`${textColor} text-2xl font-bold`}>{heading}</h2>
         <p className={`${textColor} mt-2 mb-4`}>
             {children}
@@ -20,6 +30,20 @@ function InfoBox({
         >
         {buttonInfo.text}
         </Link>
+        <img
+        src={backgroundImage}
+        alt="Background Image"
+        style={{
+          opacity: 0.3, // adjust opacity here
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          zIndex:-1
+        }}
+      />
     </div>
   )
 }

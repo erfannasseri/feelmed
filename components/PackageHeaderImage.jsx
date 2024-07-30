@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import headerImage from './header.jpg'
+//import headerImage from './header.jpg'
+import headerImage from '../assets/images/1719896523114 copys.png'
 
 
 const PackageHeaderImage = ({image}) => {
@@ -10,9 +11,9 @@ const PackageHeaderImage = ({image}) => {
         <div className="grid grid-cols-1">
             <div className='relative'>
             <Image
-            src={image[0]}
+            src={headerImage}
             alt=""
-            className="  object-cover h-[400px] w-full opacity-50"
+            className="  object-cover h-full "
             width={0}
             height={0}
             sizes='100vw'

@@ -1,5 +1,7 @@
 import React from 'react'
-
+import Feelpic from './PackageHeaderImage'
+import MyMed from '../assets/images/1719896523170 copy.png'
+import Image from 'next/image'
 export const Hero = () => {
   return (
    /*  <!-- Hero --> */
@@ -7,14 +9,14 @@ export const Hero = () => {
       <div
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center"
       >
-        <div className="text-center">
+        <div className="text-center ">
           <h1
             className="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl"
           >
             Health tourism organizer in Iran 
           </h1>
           <p className="my-4 text-xl text-white">
-          Feelmed provides international medical travel facilities with high quality healthcare services in Iran.
+          MyMedTrips provides international medical travel facilities with high quality healthcare services in Iran.
           </p>
         </div>
         <form
@@ -49,6 +51,7 @@ export const Hero = () => {
             Search
           </button>
         </form>
+       
       </div>
     </section>
 

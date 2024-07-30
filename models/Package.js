@@ -1,5 +1,6 @@
 import { Schema, model, models } from "mongoose";
 
+
 const packageSchema = new Schema({
   title: {
     type: String,
